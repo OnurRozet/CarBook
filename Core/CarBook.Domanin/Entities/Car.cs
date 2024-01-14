@@ -21,6 +21,8 @@ namespace CarBook.Domanin.Entities
         public string BigImageUrl { get; set; }
         public List<CarFeature> CarFeatures { get; set; }
         public CarDescription CarDescription { get; set; }
+		public List<CarPricing>? CarPricings { get; set; }
 
-    }
+
+	}
 }

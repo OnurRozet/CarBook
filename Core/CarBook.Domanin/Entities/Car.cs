@@ -8,7 +8,7 @@ namespace CarBook.Domanin.Entities
 {
 	public class Car
 	{
-        public int CarId { get; set; }
+        public int Id { get; set; }
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
         public string Model { get; set; }
@@ -19,8 +19,9 @@ namespace CarBook.Domanin.Entities
         public string Luggage { get; set; }
         public string Fuel { get; set; }
         public string BigImageUrl { get; set; }
+        public int CarDescriptionId { get; set; }
         public List<CarFeature> CarFeatures { get; set; }
-        public CarDescription CarDescription { get; set; }
+        public CarDescription? CarDescription { get; set; }
 		public List<CarPricing>? CarPricings { get; set; }
 
 

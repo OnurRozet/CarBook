@@ -1,8 +1,16 @@
 using CarBook.Application.Features.CQRS.Handlers.AboutHandlers;
 using CarBook.Application.Features.CQRS.Handlers.BannerHandlers;
+using CarBook.Application.Features.CQRS.Handlers.BrandHandlers;
+using CarBook.Application.Features.CQRS.Handlers.CarHandlers;
+using CarBook.Application.Features.CQRS.Handlers.Categoryhandlers;
+using CarBook.Application.Features.CQRS.Handlers.ContactHandlers;
+using CarBook.Application.Features.Mediator.Handlers.FeatureHandlers;
 using CarBook.Application.Interfaces;
+using CarBook.Application.Interfaces.CarInterfaces;
 using CarBook.Persistance.Context;
 using CarBook.Persistance.Repositories;
+using CarBook.Persistance.Repositories.CarRepositories;
+using CarBook.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +35,39 @@ builder.Services.AddScoped<CreateBannerCommandHandler>();
 builder.Services.AddScoped<UpdateBannerCommandHandler>();
 builder.Services.AddScoped<RemoveBannerCommandHandler>();
 
+builder.Services.AddScoped<GetBrandQueryHandler>();
+builder.Services.AddScoped<GetBrandByIdQueryHandler>();
+builder.Services.AddScoped<CreateBrandCommandHandler>();
+builder.Services.AddScoped<UpdateBrandCommandHandler>();
+builder.Services.AddScoped<RemoveBrandCommandHandler>();
+
+builder.Services.AddScoped<GetCarQueryHandler>();
+builder.Services.AddScoped<GetCarByIdQueryHandler>();
+builder.Services.AddScoped<CreateCarCommandHandler>();
+builder.Services.AddScoped<UpdateCarCommandHandler>();
+builder.Services.AddScoped<RemoveCarCommandHandler>();
+builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
+
+builder.Services.AddScoped<GetCategoryQueryHandler>();
+builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
+builder.Services.AddScoped<CreateCategoryCommandHandler>();
+builder.Services.AddScoped<UpdateCategoryCommandHandler>();
+builder.Services.AddScoped<RemoveCategoryCommandHandler>();
+
+builder.Services.AddScoped<GetContactQueryHandler>();
+builder.Services.AddScoped<GetContactByIdQueryHandler>();
+builder.Services.AddScoped<CreateContactCommandHandler>();
+builder.Services.AddScoped<UpdateContactCommandHandler>();
+builder.Services.AddScoped<RemoveContactCommandHandler>();
+
+
+
+
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
+builder.Services.AddScoped<ICarRepository,CarRepository>();
+
+builder.Services.AddApplicationService();
+
 
 var app = builder.Build();
 

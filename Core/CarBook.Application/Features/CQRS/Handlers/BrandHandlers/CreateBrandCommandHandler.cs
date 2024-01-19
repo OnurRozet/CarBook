@@ -1,5 +1,6 @@
 ﻿using CarBook.Application.Features.CQRS.Commands.AboutCommand;
 using CarBook.Application.Features.CQRS.Commands.BrandCommand;
+using CarBook.Application.Features.CQRS.Results.BrandResults;
 using CarBook.Application.Interfaces;
 using CarBook.Domanin.Entities;
 using System;
@@ -21,12 +22,15 @@ namespace CarBook.Application.Features.CQRS.Handlers.BrandHandlers
 
 		public async Task Handle(CreateBrandCommand command)
 		{
-
 			await _repository.CreateAsync(new Brand
 			{
 				BrandName = command.BrandName,
 
 			});
+
+
+
+
 
 
 		}

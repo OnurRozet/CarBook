@@ -22,7 +22,8 @@ namespace CarBook.Persistance.Repositories
 		public async Task CreateAsync(T entity)
 		{
 			_context.Set<T>().Add(entity);
-			await _context.SaveChangesAsync();
+		  	await _context.SaveChangesAsync();
+			
 		}
 
 		public async Task DeleteAsync(T entity)

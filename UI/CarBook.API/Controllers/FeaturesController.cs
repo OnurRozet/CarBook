@@ -1,6 +1,7 @@
 ﻿using CarBook.Application.Features.Mediator.Commands.FeatureCommands;
 using CarBook.Application.Features.Mediator.Handlers.FeatureHandlers;
 using CarBook.Application.Features.Mediator.Queries;
+using CarBook.Application.Features.Mediator.Queries.FeatureQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

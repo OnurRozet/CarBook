@@ -12,7 +12,6 @@ namespace CarBook.Application.Features.CQRS.Results.CarResults
 		public int Id { get; set; }
 		public int BrandId { get; set; }
         public string? BrandName { get; set; }
-        public Brand Brand { get; set; }
 		public string Model { get; set; }
 		public string CoverImageUrl { get; set; }
 		public int Km { get; set; }

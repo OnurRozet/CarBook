@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Queries.FooterAddressQueries
 {
-	public class GetFooterAddressQuery:IRequest<GetFooterAddressQueryResult>
+	public class GetFooterAddressQuery:IRequest<List<GetFooterAddressQueryResult>>
 	{
 
 

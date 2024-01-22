@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace CarBook.Domanin.Entities
 {
-	public class Category
-	{
-        public int CategoryId { get; set; }
-        public string? CategoyName { get; set; }
+    public class Author
+    {
+        public int AuthorID { get; set; }
+        public string Name { get; set; }
+        public string ImageUrl { get; set; }
+        public string Description { get; set; }
         public List<Blog> Blogs { get; set; }
     }
 }

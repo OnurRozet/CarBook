@@ -1,15 +1,15 @@
-﻿using CarBook.Application.Features.Mediator.Results.FooterAddressResults;
+﻿using CarBook.Application.Features.CQRS.Results.BannerResults;
+using CarBook.Application.Features.CQRS.Results.CarResults;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-
-namespace CarBook.WebUI.ViewComponents.FooterAddressViewComponent
+namespace CarBook.WebUI.ViewComponents.FeaturedVehicleViewComponent
 {
-    public class _FooterAddressComponentPartial:ViewComponent
+    public class _FeaturedVehicleComponentPartial:ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _FooterAddressComponentPartial(IHttpClientFactory httpClientFactory)
+        public _FeaturedVehicleComponentPartial(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
@@ -17,15 +17,14 @@ namespace CarBook.WebUI.ViewComponents.FooterAddressViewComponent
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7205/api/FooterAddress");
+            var responseMessage = await client.GetAsync("https://localhost:7205/api/Cars/GetLast5CarsWithBrand");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<GetFooterAddressQueryResult>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<GetLast5CarsWithBrandQueryResult>>(jsonData);
                 return View(values);
             }
             return View();
-            
         }
     }
 }

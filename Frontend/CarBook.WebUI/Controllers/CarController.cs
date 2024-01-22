@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBook.Application.Features.CQRS.Results.CarResults;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using UdemyCarBook.Dto.CarDtos;
-using UdemyCarBook.Dto.ServiceDtos;
+
 
 namespace CarBook.WebUI.Controllers
 {
@@ -20,7 +20,7 @@ namespace CarBook.WebUI.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultCarWithBrandsDtos>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<GetCarWithBrandQueryResult>>(jsonData);
                 return View(values);
             }
             return View();

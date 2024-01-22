@@ -32,7 +32,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CarBook.Dtos\CarBook.Dtos.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\CarBook.Infrastructure\CarBook.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\CarBook.Persistance\CarBook.Persistance.csproj" />
+   
   </ItemGroup>
 
 </Project>

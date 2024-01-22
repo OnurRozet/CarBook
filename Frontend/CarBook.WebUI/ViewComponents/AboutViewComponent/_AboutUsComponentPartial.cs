@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBook.Application.Features.CQRS.Results.AboutResults;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using UdemyCarBook.Dto.AboutDtos;
+
 
 namespace CarBook.WebUI.ViewComponents.AboutViewComponent
 {
@@ -20,7 +21,7 @@ namespace CarBook.WebUI.ViewComponents.AboutViewComponent
 			if(responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData= await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
+				var values = JsonConvert.DeserializeObject<List<GetAboutQueryResult>>(jsonData);
 			    return View(values);
 			}
 			return View();

@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBook.Application.Features.Mediator.Results.TestimonialResults;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using UdemyCarBook.Dto.TestimonialDtos;
+
 
 namespace CarBook.WebUI.ViewComponents.TestimonialVİewComponent
 {
@@ -21,7 +22,7 @@ namespace CarBook.WebUI.ViewComponents.TestimonialVİewComponent
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData= await responseMessage.Content.ReadAsStringAsync();
-                var values =  JsonConvert.DeserializeObject<List<ResultTestimonialDto>>(jsonData);
+                var values =  JsonConvert.DeserializeObject<List<GetTestimonialQueryResult>>(jsonData);
                 return View(values);
             }
             return View();

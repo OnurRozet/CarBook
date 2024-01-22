@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBook.Application.Features.CQRS.Commands.ContactCommand;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
-using UdemyCarBook.Dto.CarDtos;
-using UdemyCarBook.Dto.ContactDtos;
+
 
 namespace CarBook.WebUI.Controllers
 {
@@ -20,7 +20,7 @@ namespace CarBook.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(CreateContactDto contactDto)
+        public async Task<IActionResult> Index(CreateContactCommand contactDto)
         {
             var client = _httpClientFactory.CreateClient();
             contactDto.SendDate = DateTime.Now;

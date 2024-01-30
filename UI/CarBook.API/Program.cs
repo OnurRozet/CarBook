@@ -11,6 +11,14 @@ using CarBook.Persistance.Context;
 using CarBook.Persistance.Repositories;
 using CarBook.Persistance.Repositories.CarRepositories;
 using CarBook.Application.Services;
+using CarBook.Application.Interfaces.BlogInterfaces;
+using CarBook.Persistance.Repositories.BlogRepositories;
+using CarBook.Application.Interfaces.CarPricingInterfaces;
+using CarBook.Persistance.Repositories.CarPricingRepositories;
+using CarBook.Application.Interfaces.TagCloudInterfaces;
+using CarBook.Persistance.Repositories.TagCloudRepositories;
+using CarBook.Application.Features.RepositoryPattern.CommentRepositories;
+using CarBook.Persistance.Repositories.CommentRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,7 +73,12 @@ builder.Services.AddScoped<RemoveContactCommandHandler>();
 
 
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>),typeof(CommentRepository<>));
 builder.Services.AddScoped<ICarRepository,CarRepository>();
+builder.Services.AddScoped<IBlogRepository,BlogRepository>();
+builder.Services.AddScoped<ICarPricingRepository,CarPricingRepository>();
+builder.Services.AddScoped<ITagCloud,TagCloudRepositories>();
+
 
 builder.Services.AddApplicationService();
 

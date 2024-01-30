@@ -20,5 +20,6 @@ namespace CarBook.Application.Features.CQRS.Results.CarResults
 		public string Luggage { get; set; }
 		public string Fuel { get; set; }
 		public string BigImageUrl { get; set; }
-	}
+ 
+    }
 }

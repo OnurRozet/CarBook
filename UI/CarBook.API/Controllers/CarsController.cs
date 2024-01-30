@@ -17,18 +17,19 @@ namespace CarBook.API.Controllers
 		private readonly GetCarWithBrandQueryHandler _getCarWithBrandQueryHandler;
 		private readonly GetLast5CarsWithBrandQueryHandler _getLast5CarsWithBrandQueryHandler;
 
-        public CarsController(CreateCarCommandHandler createCarCommandHandler, UpdateCarCommandHandler updateCarCommandHandler, RemoveCarCommandHandler removeCarCommandHandler, GetCarQueryHandler getCarQueryHandler, GetCarByIdQueryHandler getCarByIdQueryHandler, GetCarWithBrandQueryHandler getCarWithBrandQueryHandler, GetLast5CarsWithBrandQueryHandler getLast5CarsWithBrandQueryHandler)
-        {
-            _createCarCommandHandler = createCarCommandHandler;
-            _updateCarCommandHandler = updateCarCommandHandler;
-            _removeCarCommandHandler = removeCarCommandHandler;
-            _getCarQueryHandler = getCarQueryHandler;
-            _getCarByIdQueryHandler = getCarByIdQueryHandler;
-            _getCarWithBrandQueryHandler = getCarWithBrandQueryHandler;
-            _getLast5CarsWithBrandQueryHandler = getLast5CarsWithBrandQueryHandler;
-        }
 
-        [HttpGet]
+		public CarsController(CreateCarCommandHandler createCarCommandHandler, UpdateCarCommandHandler updateCarCommandHandler, RemoveCarCommandHandler removeCarCommandHandler, GetCarQueryHandler getCarQueryHandler, GetCarByIdQueryHandler getCarByIdQueryHandler, GetCarWithBrandQueryHandler getCarWithBrandQueryHandler, GetLast5CarsWithBrandQueryHandler getLast5CarsWithBrandQueryHandler)
+		{
+			_createCarCommandHandler = createCarCommandHandler;
+			_updateCarCommandHandler = updateCarCommandHandler;
+			_removeCarCommandHandler = removeCarCommandHandler;
+			_getCarQueryHandler = getCarQueryHandler;
+			_getCarByIdQueryHandler = getCarByIdQueryHandler;
+			_getCarWithBrandQueryHandler = getCarWithBrandQueryHandler;
+			_getLast5CarsWithBrandQueryHandler = getLast5CarsWithBrandQueryHandler;
+		}
+
+		[HttpGet]
 
 		public async Task<IActionResult> CarList()
 		{
@@ -83,6 +84,7 @@ namespace CarBook.API.Controllers
             var values = _getLast5CarsWithBrandQueryHandler.Handle();
             return Ok(values);
         }
+
 
     }
 }

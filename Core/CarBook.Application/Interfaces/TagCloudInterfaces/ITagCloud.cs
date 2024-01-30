@@ -1,0 +1,15 @@
+﻿using CarBook.Domanin.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CarBook.Application.Interfaces.TagCloudInterfaces
+{
+    public interface ITagCloud
+    {
+        List<TagCloud> GetTagCloudWithBlogs();
+        List<TagCloud> GetTagCloudWithByBlogId(int id);
+    }
+}

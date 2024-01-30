@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="128e7c29-084f-4e3d-a275-46ea0d001698" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Core/CarBook.Application/Features/CQRS/Handlers/CarHandlers/GetCarWithBrandQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/CarBook.Application/Features/CQRS/Handlers/CarHandlers/GetCarWithBrandQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/CarBook.Application/Features/CQRS/Results/CarResults/GetLast5CarsWithBrandQueryResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/CarBook.Application/Features/CQRS/Results/CarResults/GetLast5CarsWithBrandQueryResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/CarBook.Application/Interfaces/CarInterfaces/ICarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/CarBook.Application/Interfaces/CarInterfaces/ICarRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Controllers/AboutController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Controllers/AboutController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Controllers/CarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Controllers/ServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Controllers/ServiceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Car/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Car/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Default/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Default/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_AboutUsComponentPartial/Default.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_AboutUsComponentPartial/Default.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_BecomeADriverComponentPartial/Default.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_BecomeADriverComponentPartial/Default.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_MainCoverUILayoutComponentPartial/Default.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_MainCoverUILayoutComponentPartial/Default.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_NavbarUILayoutComponentPartial/Default.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_NavbarUILayoutComponentPartial/Default.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_ServiceComponentPartial/Default.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/Views/Shared/Components/_ServiceComponentPartial/Default.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/CarBook.WebUI/wwwroot/carbook-master/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/CarBook.WebUI/wwwroot/carbook-master/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/CarBook.Persistance.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/CarBook.Persistance.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Migrations/20240117100134_mig-1.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Migrations/20240117100134_mig-1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Migrations/20240118062029_mig-fixedCarEntity.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Migrations/20240118062029_mig-fixedCarEntity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Migrations/20240119062949_mig-fixedFeatureEntity.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Migrations/20240119062949_mig-fixedFeatureEntity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Migrations/20240122095749_mig-add-entity-BlogAndAuthor.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Migrations/20240122095749_mig-add-entity-BlogAndAuthor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Repositories/CarRepositories/CarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/CarBook.Persistance/Repositories/CarRepositories/CarRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/CarBook.API/Controllers/CarsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/CarBook.API/Controllers/CarsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/CarBook.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/CarBook.API/Program.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2bUJIvD8b8k9g0M7jY0WWEHRz3B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="128e7c29-084f-4e3d-a275-46ea0d001698" name="Changes" comment="" />
+      <created>1706263649770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706263649770</updated>
+      <workItem from="1706263652842" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

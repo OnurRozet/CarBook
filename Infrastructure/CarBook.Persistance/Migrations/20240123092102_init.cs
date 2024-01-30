@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CarBook.Persistance.Migrations
 {
     /// <inheritdoc />
-    public partial class mig1 : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,6 +24,21 @@ namespace CarBook.Persistance.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Abouts", x => x.AboutId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Authors",
+                columns: table => new
+                {
+                    AuthorID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Authors", x => x.AuthorID);
                 });
 
             migrationBuilder.CreateTable(
@@ -53,20 +68,6 @@ namespace CarBook.Persistance.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Brands", x => x.BrandId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CarDescriptions",
-                columns: table => new
-                {
-                    CarDescriptionId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CardId = table.Column<int>(type: "int", nullable: false),
-                    Details = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CarDescriptions", x => x.CarDescriptionId);
                 });
 
             migrationBuilder.CreateTable(
@@ -105,7 +106,7 @@ namespace CarBook.Persistance.Migrations
                 {
                     FeatureId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<int>(type: "int", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -214,8 +215,7 @@ namespace CarBook.Persistance.Migrations
                     Seat = table.Column<byte>(type: "tinyint", nullable: false),
                     Luggage = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Fuel = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BigImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CarDescriptionId = table.Column<int>(type: "int", nullable: false)
+                    BigImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -226,12 +226,56 @@ namespace CarBook.Persistance.Migrations
                         principalTable: "Brands",
                         principalColumn: "BrandId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Blogs",
+                columns: table => new
+                {
+                    BlogID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AuthorID = table.Column<int>(type: "int", nullable: false),
+                    CoverImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CategoryID = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Blogs", x => x.BlogID);
                     table.ForeignKey(
-                        name: "FK_Cars_CarDescriptions_CarDescriptionId",
-                        column: x => x.CarDescriptionId,
-                        principalTable: "CarDescriptions",
-                        principalColumn: "CarDescriptionId",
+                        name: "FK_Blogs_Authors_AuthorID",
+                        column: x => x.AuthorID,
+                        principalTable: "Authors",
+                        principalColumn: "AuthorID",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Blogs_Categories_CategoryID",
+                        column: x => x.CategoryID,
+                        principalTable: "Categories",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CarDescriptions",
+                columns: table => new
+                {
+                    CarDescriptionId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CardId = table.Column<int>(type: "int", nullable: false),
+                    CarId = table.Column<int>(type: "int", nullable: true),
+                    Details = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CarDescriptions", x => x.CarDescriptionId);
+                    table.ForeignKey(
+                        name: "FK_CarDescriptions_Cars_CarId",
+                        column: x => x.CarId,
+                        principalTable: "Cars",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -289,6 +333,21 @@ namespace CarBook.Persistance.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Blogs_AuthorID",
+                table: "Blogs",
+                column: "AuthorID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Blogs_CategoryID",
+                table: "Blogs",
+                column: "CategoryID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CarDescriptions_CarId",
+                table: "CarDescriptions",
+                column: "CarId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CarFeatures_CarId",
                 table: "CarFeatures",
                 column: "CarId");
@@ -312,12 +371,6 @@ namespace CarBook.Persistance.Migrations
                 name: "IX_Cars_BrandId",
                 table: "Cars",
                 column: "BrandId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Cars_CarDescriptionId",
-                table: "Cars",
-                column: "CarDescriptionId",
-                unique: true);
         }
 
         /// <inheritdoc />
@@ -330,13 +383,16 @@ namespace CarBook.Persistance.Migrations
                 name: "Banners");
 
             migrationBuilder.DropTable(
+                name: "Blogs");
+
+            migrationBuilder.DropTable(
+                name: "CarDescriptions");
+
+            migrationBuilder.DropTable(
                 name: "CarFeatures");
 
             migrationBuilder.DropTable(
                 name: "CarPricings");
-
-            migrationBuilder.DropTable(
-                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Contacts");
@@ -357,6 +413,12 @@ namespace CarBook.Persistance.Migrations
                 name: "Testimonials");
 
             migrationBuilder.DropTable(
+                name: "Authors");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
+
+            migrationBuilder.DropTable(
                 name: "Features");
 
             migrationBuilder.DropTable(
@@ -367,9 +429,6 @@ namespace CarBook.Persistance.Migrations
 
             migrationBuilder.DropTable(
                 name: "Brands");
-
-            migrationBuilder.DropTable(
-                name: "CarDescriptions");
         }
     }
 }

@@ -36,6 +36,7 @@ namespace CarBook.Application.Features.CQRS.Handlers.CarHandlers
 				Seat=x.Seat,
 				BrandName=x.Brand.BrandName,
 				Id=x.Id,
+				
 			}).ToList();
 		}
 	}

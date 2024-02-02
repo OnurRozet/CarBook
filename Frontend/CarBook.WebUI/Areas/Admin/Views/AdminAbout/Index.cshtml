@@ -1,0 +1,65 @@
+﻿@model List<CarBook.Application.Features.CQRS.Results.AboutResults.GetAboutQueryResult>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+
+}
+
+<div class="page-content">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Hakkımızda Listesi</h4>
+						<p class="card-subtitle mb-4">
+							Hakkımızda ile ilgili bilgililer aşağıda görüntüleyebilirsiniz. Tema bilgisinin bozulmaması adına lütfen sadece 1 adet hakkımızda bilgisi girişi yapınız!
+						</p>
+						<div class="table-responsive">
+							<table class="table mb-0">
+								<thead>
+									<tr>
+										<th>Başlık</th>
+										<th>Açıklama</th>
+										<th>Resim URL </th>
+										<th>Sil</th>
+										<th>Güncelle</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+
+										<tr>
+											<td>@item.Title</td>
+											<td>@item.Description</td>
+											<td>@item.ImageUrl</td>
+											<td><a href="/Admin/AdminAbout/RemoveAbout/@item.AboutId" class="btn btn-outline-danger">Sil</a></td>
+											<td><a href="/Admin/AdminAbout/UpdateAbout/@item.AboutId" class="btn btn-outline-success">Güncelle</a></td>
+
+										</tr>
+									}
+								</tbody>
+							</table>
+							<td><a href="/Admin/AdminAbout/CreateAbout/" class="btn btn-outline-primary">Yeni About Girişi</a></td>
+
+						</div>
+
+					</div>
+					<!-- end card-body-->
+				</div>
+				<!-- end card -->
+
+			</div>
+			<!-- end col -->
+
+		</div>
+		<!-- end row -->
+
+	</div> <!-- container-fluid -->
+</div>
+
+
+
+

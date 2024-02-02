@@ -1,0 +1,62 @@
+﻿@model List<CarBook.Application.Features.CQRS.Results.BrandResults.GetBrandQueryResult>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+	int count = 0;
+}
+
+<div class="page-content">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-xl-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Marka Listesi</h4>
+						<p class="card-subtitle mb-4">
+							Araba markaları ile ilgili ekleme,silme,güncelleme  ve listeleme gibi işlemleri bu sayfa üzerinden gerçekleştirebilirsiniz
+						</p>
+						<div class="table-responsive">
+							<table class="table mb-0">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Marka</th>
+										<th>Markaya Ait Araçlar </th>
+										<th>Sil</th>
+										<th>Güncelle</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+										count++;
+										<tr>
+											<th scope="row">@count</th>
+											<td>@item.BrandName</td>
+											<td><a href="/AdminBrand/RemoveBrand/@item.BrandId" class="btn btn-outline-danger">Sil</a></td>
+											<td><a href="/AdminBrand/UpdateBrand/@item.BrandId" class="btn btn-outline-success">Güncelle</a></td>
+											<td><a href="/AdminBrand/UpdateBrand/@item.BrandId" class="btn btn-outline-dark">Markaya Ait Araçlar</a></td>
+										</tr>
+									}
+								</tbody>
+							</table>
+							<td><a href="/AdminBrand/CreateBrand/" class="btn btn-outline-primary">Yeni Marka Girişi</a></td>
+
+						</div>
+
+					</div>
+					<!-- end card-body-->
+				</div>
+				<!-- end card -->
+
+			</div>
+			<!-- end col -->
+
+		</div>
+		<!-- end row -->
+
+	</div> <!-- container-fluid -->
+</div>
+
+

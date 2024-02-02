@@ -50,12 +50,12 @@ namespace CarBook.API.Controllers
 			return Ok(command);
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 
-		public async Task<IActionResult> DeleteSocialMedia(RemoveSocialMediaCommand command)
+		public async Task<IActionResult> DeleteSocialMedia(int id)
 		{
-			await _metiator.Send(command);
-			return Ok(command);
+			await _metiator.Send(new RemoveSocialMediaCommand(id));
+			return Ok("Sosyal Medya Linki Silindi");
 		}
 	}
 }

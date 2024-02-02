@@ -29,6 +29,7 @@ namespace CarBook.Application.Features.CQRS.Handlers.CarHandlers
 			entity.Fuel=command.Fuel;
 			entity.BrandId=command.BrandId;
 			entity.CoverImageUrl=command.CoverImageUrl;
+			entity.Model=command.Model;
 			await _repository.UpdateAsync(entity);
 
 		}

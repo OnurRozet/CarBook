@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Authors.Mediator.Commands.AuthorCommands
+namespace CarBook.Application.Features.Mediator.Commands.AuthorCommands
 {
     public class CreateAuthorCommand : IRequest
     {

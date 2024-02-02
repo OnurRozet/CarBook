@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarBook.Domanin.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,7 @@ namespace CarBook.Application.Features.RepositoryPattern.CommentRepositories
         void Update(T entity);
         void Delete(T entity);
         T GetById(int id);
+
+        List<T> CommentListByBlogId(int blogId); 
     }
 }

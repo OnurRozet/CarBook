@@ -30,6 +30,13 @@ namespace CarBook.API.Controllers
             return Ok(values);
         }
 
+        [HttpGet("CommentListByBlog")]
+        public IActionResult CommentListByBlog(int id)
+        {
+            var values = _repository.CommentListByBlogId(id);
+            return Ok(values);
+        }
+
         [HttpPost]
 
         public IActionResult CreateComment (Comment comment) 
@@ -38,12 +45,13 @@ namespace CarBook.API.Controllers
             return Ok(comment);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
-        public IActionResult DeleteComment(Comment comment)
+        public IActionResult DeleteComment(int id )
         {
-            _repository.Delete(comment);
-            return Ok(comment);
+            var values = _repository.GetById(id);
+            _repository.Delete(values);
+            return Ok(values);
         }
 
         [HttpPut]

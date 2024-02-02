@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Authors.Mediator.Results.AuthorResults
+namespace CarBook.Application.Features.Mediator.Results.AuthorResults
 {
 	public class GetAuthorQueryResult
 	{

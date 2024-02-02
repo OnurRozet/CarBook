@@ -1,0 +1,67 @@
+﻿@model List<CarBook.Application.Features.CQRS.Results.BannerResults.GetBannerQueryResult>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+
+}
+
+<div class="page-content">
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Banner Listesi</h4>
+						<p class="card-subtitle mb-4">
+							Bannerı ile ilgili bilgililer aşağıda görüntüleyebilirsiniz. Tema bilgisinin bozulmaması adına lütfen sadece 1 adet banner bilgisi girişi yapınız!
+						</p>
+						<div class="table-responsive">
+							<table class="table mb-0">
+								<thead>
+									<tr>
+										<th>Başlık</th>
+										<th>Açıklama</th>
+										<th>Video Açıklama </th>
+										<th>Video URL </th>
+										<th>Sil</th>
+										<th>Güncelle</th>
+										<th>YouTube ' da Aç'</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+							
+										<tr>
+											<td>@item.Title</td>
+											<td>@item.Description</td>
+											<td>@item.VideoDescription</td>
+											<td>@item.VideoUrl</td>
+											<td><a href="/Admin/AdminBanner/RemoveBanner/@item.BannerId" class="btn btn-outline-danger">Sil</a></td>
+											<td><a href="/Admin/AdminBanner/UpdateBanner/@item.BannerId" class="btn btn-outline-success">Güncelle</a></td>
+											<td><a href="/Admin/AdminBanner/UpdateBanner/@item.BannerId" class="btn btn-outline-dark">YouTube ' da Aç</a></td>
+											
+										</tr>
+									}
+								</tbody>
+							</table>
+							<td><a href="/Admin/AdminBanner/CreateBanner/" class="btn btn-outline-primary">Yeni Banner Girişi</a></td>
+
+						</div>
+
+					</div>
+					<!-- end card-body-->
+				</div>
+				<!-- end card -->
+
+			</div>
+			<!-- end col -->
+
+		</div>
+		<!-- end row -->
+
+	</div> <!-- container-fluid -->
+</div>
+
+

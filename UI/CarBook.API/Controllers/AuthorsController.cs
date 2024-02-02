@@ -1,4 +1,5 @@
-﻿using CarBook.Application.Authors.Mediator.Commands.AuthorCommands;
+﻿
+using CarBook.Application.Features.Mediator.Commands.AuthorCommands;
 using CarBook.Application.Features.Mediator.Handlers.FeatureHandlers;
 using CarBook.Application.Features.Mediator.Queries.AuthorQueries;
 using MediatR;
@@ -9,11 +10,11 @@ namespace CarBook.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthorController : ControllerBase
+    public class AuthorsController : ControllerBase
     {
         private readonly IMediator _metiator;
 
-        public AuthorController(IMediator metiator)
+        public AuthorsController(IMediator metiator)
         {
             _metiator = metiator;
         }
@@ -50,12 +51,12 @@ namespace CarBook.API.Controllers
             return Ok(command);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
 
-        public async Task<IActionResult> DeleteAuthor(RemoveAuthorCommand command)
+        public async Task<IActionResult> DeleteAuthor(int id )
         {
-            await _metiator.Send(command);
-            return Ok(command);
+            await _metiator.Send(new RemoveAuthorCommand(id));
+            return Ok("Yazar Bilgisi Silinmiştir.");
         }
     }
 }

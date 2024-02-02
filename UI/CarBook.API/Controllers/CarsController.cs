@@ -61,12 +61,13 @@ namespace CarBook.API.Controllers
 			return Ok(command);
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 
-		public async Task<IActionResult> RemoveCar(RemoveCarCommand command)
+		public async Task<IActionResult> RemoveCar(int id)
 		{
-			await _removeCarCommandHandler.Handle(command);
-			return Ok(command);
+			await _removeCarCommandHandler.Handle(new RemoveCarCommand(id));
+		
+			return Ok("Araç silindi");
 		}
 
 		[HttpGet("GetCarWithBrand")]

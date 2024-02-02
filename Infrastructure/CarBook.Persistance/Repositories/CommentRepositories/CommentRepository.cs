@@ -19,6 +19,11 @@ namespace CarBook.Persistance.Repositories.CommentRepositories
             _context = context;
         }
 
+        public List<Comment> CommentListByBlogId(int blogId)
+        {
+            return _context.Set<Comment>().Where(x=>x.BlogId==blogId).ToList();
+        }
+
         public void Create(Comment entity)
         {
             _context.Comments.Add(entity);

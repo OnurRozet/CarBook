@@ -1,4 +1,5 @@
-﻿using CarBook.Application.Authors.Mediator.Commands.AuthorCommands;
+﻿
+using CarBook.Application.Features.Mediator.Commands.AuthorCommands;
 using CarBook.Application.Interfaces;
 using CarBook.Domanin.Entities;
 using MediatR;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Authors.Mediator.Handlers.AuthorHandlers
+namespace CarBook.Application.Features.Mediator.Handlers.AuthorHandlers
 {
 	public class UpdateAuthorCommandHandler : IRequestHandler<UpdateAuthorCommand>
 	{

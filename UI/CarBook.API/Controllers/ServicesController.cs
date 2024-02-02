@@ -50,12 +50,12 @@ namespace CarBook.API.Controllers
 			return Ok(command);
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 
-		public async Task<IActionResult> DeleteServices(RemoveServicesCommand command)
+		public async Task<IActionResult> DeleteServices( int id)
 		{
-			await _metiator.Send(command);
-			return Ok(command);
+			await _metiator.Send(new RemoveServicesCommand(id));
+			return Ok("Hizmet Bilgisi Silindi");
 		}
 	}
 }

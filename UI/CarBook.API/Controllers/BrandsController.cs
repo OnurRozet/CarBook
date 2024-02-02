@@ -29,7 +29,7 @@ namespace CarBook.API.Controllers
 
 		public async Task<IActionResult> BrandList()
 		{
-			var values= await _getBrandQueryHandler.Handle();
+			var values = await _getBrandQueryHandler.Handle();
 			return Ok(values);
 		}
 
@@ -57,14 +57,14 @@ namespace CarBook.API.Controllers
 			return Ok(command);
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 
-		public async Task<IActionResult> RemoveBrand(RemoveBrandCommand command)
+		public async Task<IActionResult> RemoveBrand(int id )
 		{
-			await _removeBrandCommandHandler.Handle(command);
-			return Ok(command);
+			await _removeBrandCommandHandler.Handle(new RemoveBrandCommand(id));
+			return Ok("Marka Bilgisi Silinmiştir.");
 		}
 
-
+		
 	}
 }

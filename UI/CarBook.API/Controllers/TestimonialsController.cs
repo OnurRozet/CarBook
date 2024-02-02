@@ -50,12 +50,12 @@ namespace CarBook.API.Controllers
 			return Ok(command);
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 
-		public async Task<IActionResult> DeleteTestimonial(RemoveTestimonialCommand command)
+		public async Task<IActionResult> DeleteTestimonial( int id)
 		{
-			await _metiator.Send(command);
-			return Ok(command);
+			await _metiator.Send(new RemoveTestimonialCommand(id));
+			return Ok("Referans Bilgisi Silindi");
 		}
 	}
 }

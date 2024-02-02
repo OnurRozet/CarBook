@@ -51,7 +51,7 @@ namespace CarBook.API.Controllers
 			return Ok(command);
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 
 		public async Task<IActionResult> RemoveFeature(int id)
 		{

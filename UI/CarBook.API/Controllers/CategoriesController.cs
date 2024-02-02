@@ -56,12 +56,12 @@ namespace CarBook.API.Controllers
 			return Ok(command);
 		}
 
-		[HttpDelete]
+		[HttpDelete("{id}")]
 
-		public async Task<IActionResult> RemoveCategory(RemoveCategoryCommand command)
+		public async Task<IActionResult> RemoveCategory(int id)
 		{
-			await _removeCategoryCommandHandler.Handle(command);
-			return Ok(command);
+			await _removeCategoryCommandHandler.Handle(new RemoveCategoryCommand(id));
+			return Ok("Kategori silinmiştir.");
 		}
 	}
 }

@@ -1,0 +1,41 @@
+﻿@model CarBook.Application.Features.Mediator.Results.AuthorResults.GetAuthorQueryResult
+
+@{
+    ViewData["Title"] = "UpdateAuthor";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yazar Bilgisi Güncelleme Ekranı</h4>
+                        <p class="card-subtitle mb-4">Yazar alanına veri girişini aşağıdaki panelden yapabilirsiniz.</p>
+                        <form method="post">
+                            <input type="hidden" asp-for="AuthorID" />
+                            <div class="form-group">
+                                <label for="exampleInputTitle">Başlık</label>
+                                <input type="text" class="form-control" id="exampleInputTitle" asp-for="Name" placeholder="Başlığı Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Açıklama</label>
+                                <input type="text" class="form-control" id="exampleInputDescription" asp-for="Description" placeholder="Açıklamayı Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputVideoUrl">Image Url</label>
+                                <input type="text" class="form-control" id="exampleInputVideoUrl" asp-for="ImageUrl" placeholder="Resim Url Giriniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Yazar Bilgisini Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
